@@ -1,7 +1,7 @@
-@import "tailwindcss";
 @theme {
-  --color-ink: #1a1a1a;
-  --color-gold: #c9963c;
-  --color-slate: #8c8c8c;
+  --color-ink: #1a1a18;
+  --color-gold: #a77e46;
+  --color-slate: #81827a;
+  --color-bronze: #8e623d;
   --color-bone: #ece6d8;
 }
