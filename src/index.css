@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @theme {
   --color-ink: #1a1a18;
   --color-gold: #a77e46;

@@ -1,4 +1,4 @@
-import logoFull from '../assets/logo-full.png'
+import logoFull from '../assets/guild-studios-logo-full-web.png'
 
 function Header() {
   return (
@@ -16,7 +16,7 @@ function Header() {
           <a href="#contact" className="hover:text-gold">Contact</a>
         </nav>
         
-          href="https://wa.me/918438084450"
+          <a href="https://wa.me/918438084450"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-gold text-ink text-sm font-medium px-4 py-2 rounded"
