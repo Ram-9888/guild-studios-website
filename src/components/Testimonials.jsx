@@ -100,56 +100,58 @@ function Testimonials() {
         style={{ bottom: '-10%', left: '5%', animation: 'testimonialDriftB 40s linear infinite' }}
       />
 
-      <div className="relative max-w-3xl mx-auto px-6 py-24 text-center">
+      <div className="relative max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-3xl md:text-4xl font-semibold">
           What Clients Say
         </h2>
 
-        <div
-          className="relative mt-12"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div className={`transition-opacity duration-200 ${visible ? 'opacity-100' : 'opacity-0'}`}>
-            <p className="text-bone text-xl italic leading-relaxed">"{current.quote}"</p>
-            <p className="mt-6 font-semibold text-gold">{current.name}</p>
-            <p className="text-slate text-sm">{current.location}</p>
+        <div className="mt-12 max-w-2xl mx-auto text-center">
+          <div
+            className="relative"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className={`transition-opacity duration-200 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+              <p className="text-bone text-xl italic leading-relaxed">"{current.quote}"</p>
+              <p className="mt-6 font-semibold text-gold">{current.name}</p>
+              <p className="text-slate text-sm">{current.location}</p>
+            </div>
+
+            <button
+              onClick={() => handleManual('prev')}
+              aria-label="Previous testimonial"
+              className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 border border-gold text-gold w-10 h-10 rounded-full items-center justify-center hover:bg-gold hover:text-ink transition"
+            >
+              ‹
+            </button>
+            <button
+              onClick={() => handleManual('next')}
+              aria-label="Next testimonial"
+              className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 border border-gold text-gold w-10 h-10 rounded-full items-center justify-center hover:bg-gold hover:text-ink transition"
+            >
+              ›
+            </button>
           </div>
 
-          <button
-            onClick={() => handleManual('prev')}
-            aria-label="Previous testimonial"
-            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 border border-gold text-gold w-10 h-10 rounded-full items-center justify-center hover:bg-gold hover:text-ink transition"
-          >
-            ‹
-          </button>
-          <button
-            onClick={() => handleManual('next')}
-            aria-label="Next testimonial"
-            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 border border-gold text-gold w-10 h-10 rounded-full items-center justify-center hover:bg-gold hover:text-ink transition"
-          >
-            ›
-          </button>
+          {testimonials.length <= DOT_LIMIT ? (
+            <div className="mt-10 flex justify-center gap-2">
+              {testimonials.map((t, i) => (
+                <button
+                  key={t.id}
+                  onClick={() => goTo(i)}
+                  aria-label={`Show testimonial from ${t.name}`}
+                  className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                    i === index ? 'bg-gold' : 'bg-slate/40 hover:bg-slate/70'
+                  }`}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="mt-10 text-slate text-sm">
+              {index + 1} / {testimonials.length}
+            </p>
+          )}
         </div>
-
-        {testimonials.length <= DOT_LIMIT ? (
-          <div className="mt-10 flex justify-center gap-2">
-            {testimonials.map((t, i) => (
-              <button
-                key={t.id}
-                onClick={() => goTo(i)}
-                aria-label={`Show testimonial from ${t.name}`}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  i === index ? 'bg-gold' : 'bg-slate/40 hover:bg-slate/70'
-                }`}
-              />
-            ))}
-          </div>
-        ) : (
-          <p className="mt-10 text-slate text-sm">
-            {index + 1} / {testimonials.length}
-          </p>
-        )}
       </div>
     </section>
   )
