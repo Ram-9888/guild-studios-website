@@ -1,4 +1,4 @@
-import graniteTexture from '../assets/guild-studios-granite-texture-v3-deepened.jpg'
+import slateTexture from '../assets/guild-studios-slate-texture.jpg'
 
 function Services() {
   const services = [
@@ -48,7 +48,7 @@ function Services() {
         .stone-slab .slab-front {
           position: absolute;
           inset: 0;
-          background-image: url("${graniteTexture}");
+          background-image: url("${slateTexture}");
           background-size: cover;
           background-position: center;
           filter: brightness(1.15);
@@ -64,8 +64,8 @@ function Services() {
           top: 0;
           left: 100%;
           width: 16px;
-          height: 100%;
-          background-image: url("${graniteTexture}");
+          height: calc(100% + 1px);
+          background-image: url("${slateTexture}");
           background-size: cover;
           background-position: center;
           filter: brightness(0.85);
@@ -79,7 +79,7 @@ function Services() {
           left: 0;
           width: 100%;
           height: 16px;
-          background-image: url("${graniteTexture}");
+          background-image: url("${slateTexture}");
           background-size: cover;
           background-position: center;
           filter: brightness(0.65);
@@ -94,7 +94,7 @@ function Services() {
         </h2>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-12">
           {services.map((service) => (
-            <div key={service.name} className="stone-slab aspect-[3/2] overflow-hidden px-6 pt-8 pb-8 text-center">
+            <div key={service.name} className="stone-slab min-h-[15rem] px-6 pt-8 pb-8 text-center">
               <div className="slab-front" />
               <div className="slab-text-bg" />
               <div className="slab-right" />

@@ -11,6 +11,7 @@ function Portfolio() {
   const touchStartX = useRef(null)
 
   const selected = categories.find((c) => c.id === activeCategory)
+  const caption = selected?.captions?.[imageIndex]
   const visibleCategories = showAll ? categories : categories.slice(0, VISIBLE_LIMIT)
   const hasMore = categories.length > VISIBLE_LIMIT
 
@@ -157,7 +158,16 @@ function Portfolio() {
               </>
             )}
 
-            <p className="text-center text-bone/80 text-sm mt-4">
+            {caption && (
+              <p
+                className="text-center text-bone italic text-lg mt-4"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                {caption}
+              </p>
+            )}
+
+            <p className={`text-center text-bone/80 text-sm ${caption ? 'mt-2' : 'mt-4'}`}>
               {selected.name} — {imageIndex + 1} / {selected.images.length}
             </p>
           </div>

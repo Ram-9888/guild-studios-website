@@ -1,7 +1,7 @@
 const backgroundImages = [
-  "https://loremflickr.com/1600/900/livingroom,luxury",
-  "https://loremflickr.com/1600/900/bedroom,modern",
-  "https://loremflickr.com/1600/900/kitchen,interior",
+  "https://images.unsplash.com/photo-1746517757473-7c88850e539b?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1561049933-f8b4f520ca32?q=80&w=1600&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1682888813795-192fca4a10d9?q=80&w=1600&auto=format&fit=crop",
 ]
 
 const SLIDE_DURATION_MS = 7000
